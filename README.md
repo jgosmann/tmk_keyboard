@@ -11,8 +11,8 @@ suited for that.
 Goals
 -----
 
-I like thumb keys. I like them a lot. The main task I use them for is modifiers. 
-This means moving Shift, Mod3/Mod4 (Neo stuff), Ctrl, Alt and Super there. 
+I like thumb keys. I like them a lot. The main task I use them for is modifiers.  
+This means moving Shift, Mod3/Mod4 (Neo stuff), Ctrl, Alt and Super there.  
 Because I use i3 as my window manager and rely heavily on the Super modifier, it 
 has to be present on both thumb clusters. That means Ctrl and Alt are not.
 

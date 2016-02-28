@@ -96,6 +96,7 @@ INVERT_NUMLOCK = yes 	# invert state of NumLock led
 VPATH += $(TARGET_DIR)
 VPATH += $(TOP_DIR)
 
+include $(TOP_DIR)/protocol.mk
 include $(TOP_DIR)/protocol/pjrc.mk
 include $(TOP_DIR)/common.mk
 include $(TOP_DIR)/rules.mk
