@@ -287,7 +287,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
      * |        |      |      |      |      |      |      |           | Ins  | Vol+ |  App |      |      |      |        |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
-     * |        |      |      |      |      |      |------|           |------| Mute | Last | Pl/Ps| Next | Stop |        |
+     * |        | Solo | Mid  | ADC  | Jung |      |------|           |------| Mute | Last | Pl/Ps| Next | Stop |        |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * |        |      |      |      |      |      |  KVM |           |      | Vol- |      |      |      |      |        |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
@@ -306,7 +306,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
          PWR,  NO,  NO,  NO,  NO,  NO,FN10,
           NO,  NO,  NO,  NO,  NO,  NO,  NO,
-          NO,  NO,  NO,  NO,  NO,  NO,
+          NO,FN12,FN13,FN14,FN15,  NO,
           NO,  NO,  NO,  NO,  NO,  NO,FN11,
           NO,  NO,  NO,  NO,  NO,
                                         NO,  NO,
@@ -335,6 +335,10 @@ enum function_id {
 
 enum macro_id {
     KVM_SWITCH,
+    SMITE_SOLO,
+    SMITE_MID,
+    SMITE_ADC,
+    SMITE_JUNG,
 };
 
 /*
@@ -349,6 +353,10 @@ static const uint16_t PROGMEM fn_actions[] = {
     [5] = ACTION_LAYER_MOMENTARY(5),
     [10] = ACTION_FUNCTION(TEENSY_KEY),
     [11] = ACTION_MACRO(KVM_SWITCH),
+    [12] = ACTION_MACRO(SMITE_SOLO),
+    [13] = ACTION_MACRO(SMITE_MID),
+    [14] = ACTION_MACRO(SMITE_ADC),
+    [15] = ACTION_MACRO(SMITE_JUNG),
 };
 
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
@@ -400,6 +408,22 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
         case KVM_SWITCH:
             return (event.pressed ?
                     MACRO( I(50), T(LCTRL), T(LCTRL), W(255), W(255), T(ENTER), END) : MACRO_NONE);
+            break;
+        case SMITE_SOLO:
+            return (event.pressed ?
+                    MACRO( T(ENTER), T(H), T(G), T(E), T(G), T(ENTER), END) : MACRO_NONE);
+            break;
+        case SMITE_MID:
+            return (event.pressed ?
+                    MACRO( T(ENTER), T(M), T(S), T(SCLN), T(ENTER), END) : MACRO_NONE);
+            break;
+        case SMITE_ADC:
+            return (event.pressed ?
+                    MACRO( T(ENTER), T(D), T(SCLN), T(R), T(ENTER), END) : MACRO_NONE);
+            break;
+        case SMITE_JUNG:
+            return (event.pressed ?
+                    MACRO( T(ENTER), T(SLSH), T(A), T(J), T(I), T(E), T(F), T(ENTER), END) : MACRO_NONE);
             break;
         default:
             return MACRO_NONE;

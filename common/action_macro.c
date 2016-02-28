@@ -14,10 +14,10 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-#include <util/delay.h>
 #include "action.h"
 #include "action_util.h"
 #include "action_macro.h"
+#include "wait.h"
 
 #ifdef DEBUG_ACTION
 #include "debug.h"
@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #ifndef NO_ACTION_MACRO
 
-#define MACRO_READ()  (macro = pgm_read_byte(macro_p++))
+#define MACRO_READ()  (macro = MACRO_GET(macro_p++))
 void action_macro_play(const macro_t *macro_p)
 {
     macro_t macro = END;
@@ -42,6 +42,7 @@ void action_macro_play(const macro_t *macro_p)
                 dprintf("KEY_DOWN(%02X)\n", macro);
                 if (IS_MOD(macro)) {
                     add_weak_mods(MOD_BIT(macro));
+                    send_keyboard_report();
                 } else {
                     register_code(macro);
                 }
@@ -51,6 +52,7 @@ void action_macro_play(const macro_t *macro_p)
                 dprintf("KEY_UP(%02X)\n", macro);
                 if (IS_MOD(macro)) {
                     del_weak_mods(MOD_BIT(macro));
+                    send_keyboard_report();
                 } else {
                     unregister_code(macro);
                 }
@@ -58,7 +60,7 @@ void action_macro_play(const macro_t *macro_p)
             case WAIT:
                 MACRO_READ();
                 dprintf("WAIT(%u)\n", macro);
-                { uint8_t ms = macro; while (ms--) _delay_ms(1); }
+                { uint8_t ms = macro; while (ms--) wait_ms(1); }
                 break;
             case INTERVAL:
                 interval = MACRO_READ();
@@ -77,7 +79,7 @@ void action_macro_play(const macro_t *macro_p)
                 return;
         }
         // interval
-        { uint8_t ms = interval; while (ms--) _delay_ms(1); }
+        { uint8_t ms = interval; while (ms--) wait_ms(1); }
     }
 }
 #endif

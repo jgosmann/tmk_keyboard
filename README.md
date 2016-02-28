@@ -11,8 +11,8 @@ suited for that.
 Goals
 -----
 
-I like thumb keys. I like them a lot. The main task I use them for is modifiers. 
-This means moving Shift, Mod3/Mod4 (Neo stuff), Ctrl, Alt and Super there. 
+I like thumb keys. I like them a lot. The main task I use them for is modifiers.  
+This means moving Shift, Mod3/Mod4 (Neo stuff), Ctrl, Alt and Super there.  
 Because I use i3 as my window manager and rely heavily on the Super modifier, it 
 has to be present on both thumb clusters. That means Ctrl and Alt are not.
 
@@ -32,11 +32,12 @@ actual keymaps can be found in [keymap_neo.h](keyboard/ergodox/keymap_neo.h).
 
 In addition, each layer has a toggle key for Layer5 that hosts some media keys, 
 a teensy key and my very own special macro that is intended to switch computers 
-on my kvm switch.
+on my kvm switch. And I added some roll call macros for my favorite MOBA, 
+[Smite](http://www.smitegame.com) :)
 
 ![Layout View](layout.png)
 
-[Keyboard Layout Editor link](http://www.keyboard-layout-editor.com/##@@_x:3.5;&=3&_x:10.5;&=8;&@_y:-0.875&x:2.5;&=2&_x:1;&=4&_x:8.5;&=7&_x:1;&=9;&@_y:-0.875&x:5.5;&=5&=F13%0A%0A%0A%0ATeensy&_x:4.5;&=F14&=6;&@_y:-0.875&w:1.5;&=Esc%0A%0A%0A%0APower&=1&_x:14.5;&=0&_w:1.5;&=-%0A%0A%0A%0ATeensy;&@_y:-0.375&x:3.5;&=L&_x:10.5;&=G;&@_y:-0.875&x:2.5;&=V&_x:1;&=C&_x:8.5;&=H%0A%0A%0A%0AApp&_x:1;&=F;&@_y:-0.875&x:5.5;&=W&_h:1.5;&=Bspc&_x:4.5&h:1.5;&=+Layer%0A%0A%0A%0AIns&=K%0A%0A%0A%0AVol+;&@_y:-0.875&w:1.5;&=Tab&=X&_x:14.5;&=Q&_w:1.5;&=ẞ;&@_y:-0.375&x:3.5&a:0;&=A&_x:10.5&a:4;&=R%0A%0A%0A%0APlay;&@_y:-0.875&x:2.5;&=I&_x:1;&=E&_x:8.5;&=N%0A%0A%0A%0APrev&_x:1;&=T%0A%0A%0A%0ANext;&@_y:-0.875&x:5.5;&=O&_x:6.5;&=S%0A%0A%0A%0AMute;&@_y:-0.875&w:1.5;&=Del&=U&_x:14.5;&=D%0A%0A%0A%0AStop&_w:1.5;&=Y;&@_y:-0.625&x:6.5&h:1.5;&=Enter%0A%0A%0A%0AKVM&_x:4.5&h:1.5;&=~L5;&@_y:-0.75&x:3.5;&=Ä&_x:10.5;&=,;&@_y:-0.875&x:2.5;&=Ö&_x:1;&=P&_x:8.5;&=M&_x:1;&=.;&@_y:-0.875&x:5.5;&=Z&_x:6.5;&=B%0A%0A%0A%0AVol-;&@_y:-0.875&w:1.5;&=T1%0AShift%0A%0A%0A%0A%0A%0A<&=Ü&_x:14.5;&=J&_w:1.5;&=T2%0AShift%0A%0A%0A%0A%0A%0A#;&@_y:-0.375&x:3.5;&=F3&_x:10.5;&=F10;&@_y:-0.875&x:2.5;&=F2&_x:1;&=F4&_x:8.5;&=F9&_x:1;&=F11;&@_y:-0.75&x:0.5;&=PrScr%0ACtrl&=F1&_x:14.5;&=F12&=T3%0ACtrl;&@_r:30&rx:6.5&ry:4.25&y:-1&x:1;&=F5&=F6;&@_h:2;&=Shift%0ASpace&_h:2;&=Mod4%0A~L4%0A%0A%0A%0A%0A%0A~L4&=Alt;&@_x:2;&=Super;&@_r:-30&rx:13&y:-1&x:-3;&=F7&=F8;&@_x:-3;&=Ctrl&_h:2;&=Mod3%0A%0A%0A%0A%0A%0A%0AAltGr&_h:2;&=Space;&@_x:-3;&=Super)
+[Keyboard Layout Editor link](http://www.keyboard-layout-editor.com/#/layouts/67c6725891c912c01ce3088089f5bafd)
 
 The layout on the image is as follows:
 
