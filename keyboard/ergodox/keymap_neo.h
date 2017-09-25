@@ -40,18 +40,18 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |    1   |   2  |   3  |   4  |   5  |   6  |      |           |      |   7  |   8  |   9  |   0  |   -  |   `    |
      * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
      * |  Tab   |   X  |   V  |   L  |   C  |   W  |      |           |      |   K  |   H  |   G  |   F  |   Q  |   ß    |
-     * |--------+------+------+------+------+------|      |           |Home  |------+------+------+------+------+--------|
+     * |--------+------+------+------+------+------| Home |           |      |------+------+------+------+------+--------|
      * |  M3    |   U  |   I  |   A  |   E  |   O  |------|           |------|   S  |   N  |   R  |   T  |   D  |   Y    |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
-     * | Shift  |   Ü  |   Ö  |   Ä  |   P  |   Z  |      |           | End  |   B  |   M  |   ,  |   .  |   J  | Shift  |
+     * | Shift  |   Ü  |   Ö  |   Ä  |   P  |   Z  | End  |           |      |   B  |   M  |   ,  |   .  |   J  | Shift  |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-     *   | Esc  |   ^  | LAlt | Ctrl |  M4  |                                       |  M3  |  M4  |      | Left |Right|
+     *   | Esc  |   ^  | LAlt | Ctrl |  M4  |                                       |  M3  |  M4  |  L1  | Left |Right|
      *   `----------------------------------'                                       `----------------------------------'
      *                                        ,-------------.       ,-------------.
      *                                        | mute |  <<  |       |  >>  | >||  |
      *                                 ,------|------|------|       |------+------+------.
      *                                 |      |      | Vol+ |       |  Up  |      |      |
-     *                                 | Back | Enter|------|       |------|      | Space|
+     *                                 | Back | Enter|------|       |------| RAlt | Space|
      *                                 |  sp  |      | Vol- |       | Down |      |      |
      *                                 `--------------------'       `--------------------'
      */
@@ -59,74 +59,65 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP(
         // left hand
           1,    2,   3,     4,   5,   6,   NO,
-        TAB,    Q,   W,     E,   R,   T,   NO,
+        TAB,    Q,   W,     E,   R,   T, HOME,
        CAPS,    A,   S,     D,   F,   G,
-       LSFT,    Z,   X,     C,   V,   B,   NO,
+       LSFT,    Z,   X,     C,   V,   B,  END,
         ESC, NUBS,LALT, LCTRL,NUBS,
                                       MUTE,MPRV,
                                            VOLU,
                                BSPC,   ENT,VOLD,
         // right hand
               NO,   7,   8,   9,   0, MINS, EQL,
-            HOME,   Y,   U,   I,   O,   P, LBRC,
+              NO,   Y,   U,   I,   O,   P, LBRC,
                     H,   J,   K,   L,SCLN, QUOT,
-             END,   N,   M,COMM, DOT,SLSH, RSFT,
-                      BSLS,RALT,  NO,LEFT, RGHT,
+              NO,   N,   M,COMM, DOT,SLSH, RSFT,
+                      BSLS,RALT, FN1,LEFT, RGHT,
         MNXT, MPLY,
           UP,
-        DOWN,   NO, SPC
+        DOWN, LALT, SPC
     ),
 
     /* Keymap 1:
      *
-     * gamer’s Neo2
-     *
-     * This is mostly just the standard Layout for using Neo2. Sadly, some
-     * Applications (games, anyone?) cannot map the Shift key as a button.
-     * Therefor this layer moves it to the standard keyboard pinky location and
-     * puts a space bar in its stead. In addition, the PRINT and T3 keys on the
-     * bottom edges of the board become CTRL keys, again in their standard
-     * keyboard position below the SHIFTs.
-     *
      * ,--------------------------------------------------.           ,--------------------------------------------------.
-     * |  Esc   |   1  |   2  |   3  |   4  |   5  | F13  |           | F14  |   6  |   7  |   8  |   9  |   0  |   -    |
+     * |  F1    |  F2  |  F3  |  F4  |  F5  |  F6  |      |           |      |  F7  |  F8  |  F9  | F10  | F11  |  F12   |
      * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
-     * |  Tab   |   X  |   V  |   L  |   C  |   W  | BKSP |           |  L2  |   K  |   H  |   G  |   F  |   Q  |   ß    |
+     * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
-     * |  Del   |   U  |   I  |   A  |   E  |   O  |------|           |------|   S  |   N  |   R  |   T  |   D  |   Y    |
+     * |        |      |      |      |      |      |------|           |------|      |      |      |      |      |        |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
-     * |  LSft  |   Ü  |   Ö  |   Ä  |   P  |   Z  | RET  |           |  L5  |   B  |   M  |   ,  |   .  |   J  |  RSft  |
+     * |        |      |      |      |      |      |      |           |      |      |      |      |      |      |        |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-     *   | LCtrl|  F1  |  F2  |  F3  |  F4  |                                       |  F9  |  F10 |  F11 | F12  | RCtrl|
+     *   |      |      |      |      |      |                                       |      |      |      |      |      |
      *   `----------------------------------'                                       `----------------------------------'
      *                                        ,-------------.       ,-------------.
-     *                                        |  F5  |  F6  |       |  F7  |  F8  |
+     *                                        |      |      |       |      |      |
      *                                 ,------|------|------|       |------+------+------.
-     *                                 |      |      | LAlt |       | RCtrl|      |      |
-     *                                 | Space|  L4  |------|       |------|  M3r | Space|
-     *                                 |      |      | LGui |       | RGui |      |      |
+     *                                 |      |      |      |       |      |      |      |
+     *                                 |      |      |------|       |------|      |      |
+     *                                 |      |      |      |       |      |      |      |
      *                                 `--------------------'       `--------------------'
      */
 
     KEYMAP(
         // left hand
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        LSFT,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        LCTL,TRNS,TRNS,TRNS,TRNS,
-                                      TRNS,TRNS,
-                                           TRNS,
-                                  SPC, FN4,TRNS,
+          F1,  F2,  F3,  F4,  F5,  F6,  NO,
+          NO,  NO,  NO,  NO,  NO,  NO,  NO,
+          NO,  NO,  NO,  NO,  NO,  NO,
+          NO,  NO,  NO,  NO,  NO,  NO,  NO,
+          NO,  NO,  NO,  NO,  NO,
+                                        NO,  NO,
+                                             NO,
+                                   NO,  NO,  NO,
         // right hand
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-              FN2,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-                  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,RSFT,
-                       TRNS,TRNS,TRNS,TRNS,RCTL,
-        TRNS,TRNS,
-        TRNS,
-        TRNS,TRNS,TRNS
+               NO,  F7,  F8,  F9, F10, F11, F12,
+               NO,  NO,  NO,  NO,  NO,  NO,  NO,
+                    NO,  NO,  NO,  NO,  NO,  NO,
+               NO,  NO,  NO,  NO,  NO,  NO,  NO,
+                         NO,  NO,TRNS,  NO,  NO,
+          NO,  NO,
+          NO,
+          NO,  NO,  NO
     ),
 
     /* Keymap 2:
@@ -346,7 +337,7 @@ enum macro_id {
  */
 static const uint16_t PROGMEM fn_actions[] = {
     [0] = ACTION_FUNCTION(LAYER0),
-    [1] = ACTION_FUNCTION(LAYER1),
+    [1] = ACTION_LAYER_MOMENTARY(1),
     [2] = ACTION_FUNCTION(LAYER2),
     [3] = ACTION_FUNCTION(LAYER3),
     [4] = ACTION_LAYER_MOMENTARY(4),
