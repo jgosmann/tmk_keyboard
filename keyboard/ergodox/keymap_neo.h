@@ -37,7 +37,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * Neo2
      *
      * ,--------------------------------------------------.           ,--------------------------------------------------.
-     * |    1   |   2  |   3  |   4  |   5  |   6  |      |           |      |   7  |   8  |   9  |   0  |   -  |   `    |
+     * |    1   |   2  |   3  |   4  |   5  |   6  |      |           |  L3  |   7  |   8  |   9  |   0  |   -  |   `    |
      * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
      * |  Tab   |   X  |   V  |   L  |   C  |   W  |      |           |      |   K  |   H  |   G  |   F  |   Q  |   ß    |
      * |--------+------+------+------+------+------| Home |           |      |------+------+------+------+------+--------|
@@ -67,7 +67,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                            VOLU,
                                BSPC,   ENT,VOLD,
         // right hand
-              NO,   7,   8,   9,   0, MINS, EQL,
+             FN3,   7,   8,   9,   0, MINS, EQL,
               NO,   Y,   U,   I,   O,   P, LBRC,
                     H,   J,   K,   L,SCLN, QUOT,
               NO,   N,   M,COMM, DOT,SLSH, RSFT,
@@ -184,44 +184,44 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ¹ Pull requests welcome.
      *
      * ,--------------------------------------------------.           ,--------------------------------------------------.
-     * |  Esc   |   1  |   2  |   3  |   4  |   5  | F13  |           | F14  |   6  |   7  |   8  |   9  |   0  |   -    |
+     * |    1   |   2  |   3  |   4  |   5  |   6  |      |           |  L3  |   7  |   8  |   9  |   0  |   -  |   `    |
      * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
-     * |  Tab   |   X  |   V  |   L  |   C  |   W  | BKSP |           |  L0  |   K  |   H  |   G  |   F  |   Q  |   ß    |
+     * |  Tab   |   X  |   V  |   L  |   C  |   W  |      |           |      |   K  |   H  |   G  |   F  |   Q  |   ß    |
+     * |--------+------+------+------+------+------| Home |           |      |------+------+------+------+------+--------|
+     * |  M3    |   U  |   I  |   A  |   E  |   O  |------|           |------|   S  |   N  |   R  |   T  |   D  |   Y    |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
-     * |  Del   |   U  |   I  |   A  |   E  |   O  |------|           |------|   S  |   N  |   R  |   T  |   D  |   Y    |
-     * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
-     * |   <    |   Ü  |   Ö  |   Ä  |   P  |   Z  | RET  |           |  L5  |   B  |   M  |   ,  |   .  |   J  |   #    |
+     * | Shift  |   Ü  |   Ö  |   Ä  |   P  |   Z  | End  |           |      |   B  |   M  |   ,  |   .  |   J  | Shift  |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
-     *   | Prnt |  F1  |  F2  |  F3  |  F4  |                                       |  F9  |  F10 |  F11 | F12  |  T3  |
+     *   | Esc  |   ^  | LAlt | Ctrl |  M4  |                                       |  M3  |  M4  |  L1  | Left |Right|
      *   `----------------------------------'                                       `----------------------------------'
      *                                        ,-------------.       ,-------------.
-     *                                        |  F5  |  F6  |       |  F7  |  F8  |
+     *                                        | mute |  <<  |       |  >>  | >||  |
      *                                 ,------|------|------|       |------+------+------.
-     *                                 |      |      | LAlt |       | RCtrl|      |      |
-     *                                 | LSft |  L4  |------|       |------| RAlt | Space|
-     *                                 |      |      | LGui |       | RGui |      |      |
+     *                                 |      |      | Vol+ |       |  Up  |      |      |
+     *                                 | Back | Enter|------|       |------| RAlt | Space|
+     *                                 |  sp  |      | Vol- |       | Down |      |      |
      *                                 `--------------------'       `--------------------'
      */
 
     KEYMAP(
         // left hand
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,   X,   V,   L,   C,   W,TRNS,
-        TRNS,   U,   I,   A,   E,   O,
-        NUBS,LBRC,SCLN,QUOT,   P,   Y,TRNS,
-        PSCR,TRNS,TRNS,TRNS,TRNS,
-                                      LSFT,TRNS,
+       TRNS, TRNS,TRNS,  TRNS,TRNS,TRNS, TRNS,
+       TRNS,    X,   V,     L,   C,   W, TRNS,
+         NO,    U,   I,     A,   E,   O,
+       TRNS, LBRC,SCLN,  QUOT,   P,   Y, TRNS,
+       TRNS,   NO,TRNS,  TRNS, FN4,
+                                      TRNS,TRNS,
                                            TRNS,
-                                 LSFT, FN4,TRNS,
+                               BSPC,   ENT,TRNS,
         // right hand
-             TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,SLSH,
-              FN0,   K,   H,   G,   F,   Q,MINS,
-                     S,   N,   R,   T,   D,   Z,
-             TRNS,   B,   M,COMM, DOT,   J,NUHS,
-                       TRNS,TRNS,TRNS,TRNS, EQL,
-        TRNS,TRNS,
+             FN0,TRNS,TRNS,TRNS,TRNS, SLSH,  NO,
+            TRNS,   K,   H,   G,   F,   Q, MINS,
+                    S,   N,   R,   T,   D,    Z,
+            TRNS,   B,   M,COMM, DOT,   J, RSFT,
+                        NO, FN4,TRNS,LEFT, RGHT,
+        TRNS, TRNS,
         TRNS,
-        TRNS,RALT,TRNS
+        TRNS, TRNS,TRNS
     ),
 
     /* Keymap 4:
